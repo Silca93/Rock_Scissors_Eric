@@ -25,7 +25,7 @@ export default function Youwin(props) {
               props.choice == "rock" && <Rock piedra={rockImg}/>
             }
             {
-              props.choice == "sciossors" && <Scissors tijera={scissorImg}/>
+              props.choice == "scissors" && <Scissors tijera={scissorImg}/>
             }
                        
             

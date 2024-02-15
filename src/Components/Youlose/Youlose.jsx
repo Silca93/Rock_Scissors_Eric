@@ -24,7 +24,7 @@ export default function Youlose(props) {
               props.choice == "rock" && <Rock piedra={rockImg}/>
             }
             {
-              props.choice == "sciossors" && <Scissors tijera={scissorImg}/>
+              props.choice == "scissors" && <Scissors tijera={scissorImg}/>
             }
             
             <div className="w-[200px] h-[100px] flex justify-center items-center flex-col gap-3">
