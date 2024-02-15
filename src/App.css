@@ -6,3 +6,9 @@ body{
   font-weight: 600;
   font-style: normal;;
 }
+
+.containerr {
+  background-image: url(./assets/images/bg-triangle.svg);
+  background-repeat: no-repeat;
+  background-position: center
+}

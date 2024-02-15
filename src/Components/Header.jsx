@@ -7,7 +7,7 @@ export default function Header() {
           <div className="left w-1/2 h-full flex flex-col items-start justify-center">
             <h1 className="text-white text-[2.25rem] ">ROCK</h1>
             <h1 className="text-white text-[2.25rem] ">PAPER</h1>
-            <h1 className="text-white text-[2.25rem] ">SISSORS</h1>
+            <h1 className="text-white text-[2.25rem] ">SCISSORS</h1>
           </div> 
           <div className="right w-1/2 h-full flex flex-col items-end justify-center">
             <div className="square w-[140px] h-[110px] bg-white rounded-md flex flex-col gap-4 items-center justify-center">
