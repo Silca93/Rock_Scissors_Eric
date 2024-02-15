@@ -1,8 +1,10 @@
 import React from 'react'
 import Paper from '../Paper/Paper'
+import Rock from '../Rock/Rock'
 import Scissors from '../Scissors/Scissors'
 import paperImg from './../../assets/images/icon-paper.svg'
 import scissorImg from './../../assets/images/icon-scissors.svg'
+import rockImg from './../../assets/images/icon-rock.svg'
 
 export default function Youlose(props) {
   return (
@@ -14,13 +16,32 @@ export default function Youlose(props) {
       
         
         <div className="left w-1/2 h-full flex justify-center items-center">
+            {
+              props.choice == "paper" && <Paper papel={paperImg}/>
+            }
             
-            <Paper papel={paperImg}/>
+            {
+              props.choice == "rock" && <Rock piedra={rockImg}/>
+            }
+            {
+              props.choice == "sciossors" && <Scissors tijera={scissorImg}/>
+            }
+            
             <div className="w-[200px] h-[100px] flex justify-center items-center flex-col gap-3">
                 <h1 className='text-white text-[2.25rem]'>YOU LOST</h1>
                 <button onClick={() => props.setCount("Accueil")}  className="bg-white w-[150px] rounded-md py-3">PLAY AGAIN</button>
             </div>
-            <Scissors tijera={scissorImg}/>
+            {
+              props.housePick == "scissors" && <Scissors  tijera={scissorImg}/>
+            }
+            {
+              props.housePick == "rock" && <Rock  piedra={rockImg}/>
+            }
+            {
+              props.housePick == "paper" && <Paper  papel={paperImg}/>
+            }
+
+            
         </div>
     </div>
   )

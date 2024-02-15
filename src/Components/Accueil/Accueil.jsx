@@ -14,11 +14,11 @@ export default function Accueil(props) {
   return (
     <div className={`containerr w-1/2 h-3/5 flex flex-col justify-center items-center`}>
         <div className="top w-full h-1/2 flex">
-            <Paper setCount={props.setCount} papel={papelIcon} />
+            <Paper setCount={props.setCount} setChoice={props.setChoice} papel={papelIcon} />
             <Scissors setCount={props.setCount} setChoice={props.setChoice} tijera={scissorIcon}/>
         </div>
         <div className="bot w-full h-1/2 flex justify-center">
-            <Rock setChoice={props.setChoice} piedra={rockIcon}/>
+            <Rock setChoice={props.setChoice}  piedra={rockIcon}/>
         </div>
     </div>
     

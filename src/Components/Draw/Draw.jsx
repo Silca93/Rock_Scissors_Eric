@@ -6,8 +6,7 @@ import paperImg from './../../assets/images/icon-paper.svg'
 import scissorImg from './../../assets/images/icon-scissors.svg'
 import rockImg from './../../assets/images/icon-rock.svg'
 
-
-export default function Youwin(props) {
+export default function Draw(props) {
   return (
     <div className={`w-full h-3/5 flex flex-col justify-center items-center`}>
       <div className="laboxeflex w-1/2 h-[200px] flex justify-between px-[50px]"> 
@@ -27,10 +26,9 @@ export default function Youwin(props) {
             {
               props.choice == "sciossors" && <Scissors tijera={scissorImg}/>
             }
-                       
             
             <div className="w-[200px] h-[100px] flex justify-center items-center flex-col gap-3">
-                <h1 className='text-white text-[2.25rem]'>YOU WIN</h1>
+                <h1 className='text-white text-[2.25rem]'>DRAW</h1>
                 <button onClick={() => props.setCount("Accueil")} className="bg-white w-[150px] rounded-md py-3">PLAY AGAIN</button>
             </div>
             {
