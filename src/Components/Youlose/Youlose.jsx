@@ -1,6 +1,8 @@
 import React from 'react'
 import Paper from '../Paper/Paper'
 import Scissors from '../Scissors/Scissors'
+import paperImg from './../../assets/images/icon-paper.svg'
+import scissorImg from './../../assets/images/icon-scissors.svg'
 
 export default function Youlose(props) {
   return (
@@ -13,12 +15,12 @@ export default function Youlose(props) {
         
         <div className="left w-1/2 h-full flex justify-center items-center">
             
-            <Paper/>
+            <Paper papel={paperImg}/>
             <div className="w-[200px] h-[100px] flex justify-center items-center flex-col gap-3">
                 <h1 className='text-white text-[2.25rem]'>YOU LOST</h1>
                 <button onClick={() => props.setCount("Accueil")}  className="bg-white w-[150px] rounded-md py-3">PLAY AGAIN</button>
             </div>
-            <Scissors/>
+            <Scissors tijera={scissorImg}/>
         </div>
     </div>
   )
