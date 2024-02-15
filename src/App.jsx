@@ -17,6 +17,12 @@ function App() {
   console.log("the house pick = " + housePick);
 
   let score = 0;
+  let scorePlus = () => {
+    
+    score = score + 1;
+  };
+  
+
   let draw;
   let didIwin;
 
@@ -30,8 +36,9 @@ function App() {
         didIwin = true;
         draw = false;
         console.log(didIwin);
-        score++;
+        scorePlus();
         console.log(score);
+        
         
          
    }else {
@@ -46,12 +53,11 @@ function App() {
     <div className="w-screen h-screen flex flex-col items-center gap-[80px]">
       <Header score={score}/>
       {!hasPlayed && <Accueil setHasPlayed={setHasPlayed} setCount={setCount} setChoice={setChoice}/>}
-      {/* {count == "youlose" && <Youlose setCount={setCount}/>} */}
-      {hasPlayed && didIwin && !draw && <Youwin  housePick={housePick} count={count} choice={choice} setCount={setCount}  />}
-      {hasPlayed && !didIwin && !draw && <Youlose housePick={housePick} count={count} choice={choice} setCount={setCount}  />}
-      {hasPlayed && draw && <Draw housePick={housePick} setHasPlayed={setHasPlayed} setChoice={setChoice} count={count} choice={choice} setCount={setCount}  />}
       
-            
+      {hasPlayed && didIwin && !draw && <Youwin  housePick={housePick} score={scorePlus} setHasPlayed={setHasPlayed} setChoice={setChoice} count={count} choice={choice} setCount={setCount}  />}
+      {hasPlayed && !didIwin && !draw && <Youlose housePick={housePick} setHasPlayed={setHasPlayed} setChoice={setChoice} count={count} choice={choice} setCount={setCount}  />}
+      {hasPlayed && draw && <Draw housePick={housePick} setHasPlayed={setHasPlayed} setChoice={setChoice} count={count} choice={choice} setCount={setCount}  />}
+                  
       <Footer />
 
      
