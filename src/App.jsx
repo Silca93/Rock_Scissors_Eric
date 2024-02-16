@@ -11,17 +11,29 @@ function App() {
   const [count, setCount] = useState("Accueil")
   const [choice, setChoice] = useState("")
   const [hasPlayed, setHasPlayed] = useState(false)
+  const [increment, setIncrement] = useState(0)
+  const [decrement, setDecrement] = useState(increment)
 
   let choices = ["rock", "paper", "scissors"]
   let housePick = choices[Math.floor(Math.random()*3)]
   console.log("the house pick = " + housePick);
 
-  let score = 0;
+  // let score = 0;
   let scorePlus = () => {
     
-    score = score + 1;
+    setIncrement((prevValue) => prevValue + 1);
   };
   
+  let scoreMinus = () => {
+    setDecrement((prevValue) => prevValue - 1);
+  };
+
+  let result = () => {
+    (increment - decrement);
+  }
+
+  // let joke = fetch("https://api.api-ninjas.com/v1/dadjokes?limit=")
+  // console.log(joke);
 
   let draw;
   let didIwin;
@@ -36,8 +48,8 @@ function App() {
         didIwin = true;
         draw = false;
         console.log(didIwin);
-        scorePlus();
-        console.log(score);
+        // scorePlus();
+        // console.log(score);
         
         
          
@@ -51,14 +63,15 @@ function App() {
 
   return (
     <div className="w-screen h-screen flex flex-col items-center gap-[80px]">
-      <Header score={score}/>
+      <Header score={increment} result={result} scoremoins={decrement}/>
       {!hasPlayed && <Accueil setHasPlayed={setHasPlayed} setCount={setCount} setChoice={setChoice}/>}
       
-      {hasPlayed && didIwin && !draw && <Youwin  housePick={housePick} score={scorePlus} setHasPlayed={setHasPlayed} setChoice={setChoice} count={count} choice={choice} setCount={setCount}  />}
-      {hasPlayed && !didIwin && !draw && <Youlose housePick={housePick} setHasPlayed={setHasPlayed} setChoice={setChoice} count={count} choice={choice} setCount={setCount}  />}
+      {hasPlayed && didIwin && !draw && <Youwin  housePick={housePick}  scorePlus={scorePlus} setHasPlayed={setHasPlayed} setChoice={setChoice} count={count} choice={choice} setCount={setCount}  />}
+      {hasPlayed && !didIwin && !draw && <Youlose housePick={housePick} scoreMinus={scoreMinus} setHasPlayed={setHasPlayed} setChoice={setChoice} count={count} choice={choice} setCount={setCount}  />}
       {hasPlayed && draw && <Draw housePick={housePick} setHasPlayed={setHasPlayed} setChoice={setChoice} count={count} choice={choice} setCount={setCount}  />}
                   
       <Footer />
+      
 
      
     </div>

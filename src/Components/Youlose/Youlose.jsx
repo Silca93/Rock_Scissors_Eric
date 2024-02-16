@@ -29,7 +29,7 @@ export default function Youlose(props) {
             
             <div className="w-[200px] h-[100px] flex justify-center items-center flex-col gap-3">
                 <h1 className='text-white text-[2.25rem]'>YOU LOST</h1>
-                <button onClick={() => {props.setChoice(""), props.setHasPlayed(false)}}  className="bg-white w-[150px] rounded-md py-3">PLAY AGAIN</button>
+                <button onClick={() => {props.setChoice(""), props.setHasPlayed(false), props.scoreMinus()}}  className="bg-white w-[150px] rounded-md py-3">PLAY AGAIN</button>
             </div>
             {
               props.housePick == "scissors" && <Scissors  tijera={scissorImg}/>
