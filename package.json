@@ -4,7 +4,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://github.com/Silca93/Rock_Siscors_Eric/settings/pages",
+  "homepage": "https://github.com/Silca93/Rock_Paper_Scissors/",
   "scripts": {
     "predeploy" : "npm run build",
     "deploy" : "gh-pages -d dist",
