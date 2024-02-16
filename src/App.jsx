@@ -32,8 +32,6 @@ function App() {
     (increment - decrement);
   }
 
-  // let joke = fetch("https://api.api-ninjas.com/v1/dadjokes?limit=")
-  // console.log(joke);
 
   let draw;
   let didIwin;
@@ -49,6 +47,7 @@ function App() {
         draw = false;
         console.log(didIwin);
         // scorePlus();
+        // scorePlus();
         // console.log(score);
         
         
@@ -58,6 +57,7 @@ function App() {
     didIwin = false;
     draw = false;
     console.log(didIwin);
+    // scoreMinus();
     // count == "youlose"
    }
 
